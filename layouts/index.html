@@ -11,12 +11,12 @@
 		{{- $postsFeaturedPostEnabled := .Scratch.Get "postsFeaturedPostEnabled" }}
 
 		{{- $posts := where .Data.Pages "Type" $postsFoldername }}
-
+		
 		{{- if .IsHome }}
 		{{- $posts = where .Site.RegularPages "Type" $postsFoldername }}
 		{{- end }}
 
-		{{- $firstPost := first 1 $posts }}
+		{{- $firstPost := first 6 $posts }}
 
 		{{- if and (eq $postsFeaturedPostEnabled true) (gt (len $posts) 1) -}}
 			{{- .Scratch.Set "postsForPaging" (after 1 $posts) }}
@@ -41,17 +41,18 @@
 					<div id="main">
 
 						{{- if (eq $postsFeaturedPostEnabled true) }}
-						{{- partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}
+							{{- partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}
 						{{- end }}
 
-						{{- if (not (and (eq (len $posts) 1) (eq $postsFeaturedPostEnabled true))) }}
-							{{- partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
+						{{- if (false)}}
+							{{- if (not (and (eq (len $posts) 1) (eq $postsFeaturedPostEnabled true))) }}
+								{{- partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
+							{{- end }}
+
+							{{- $paginator := .Paginator }}
+							{{- $outer := . }}
+							{{- partial "posts/pagination.html" (dict "paginator" $paginator "outer" $outer)}}
 						{{- end }}
-
-						{{- $paginator := .Paginator }}
-						{{- $outer := . }}
-						{{- partial "posts/pagination.html" (dict "paginator" $paginator "outer" $outer)}}
-
 					</div>
 
 					{{- partial "footer/index" . }}

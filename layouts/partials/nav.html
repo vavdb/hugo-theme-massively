@@ -1,7 +1,7 @@
 <!-- Nav -->
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ $currentPage := .Page }}
-<nav id="nav">
+<nav id="nav" class="sticky">
     <ul class="links">
         <li class="{{ if eq ($currentPage.RelPermalink) (`/`) }}active{{end}}"><a href='{{ "/" | relLangURL }}'>{{ .Site.Title }}</a></li>
         {{- with $data.nav.items -}}
