@@ -1,6 +1,10 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.intro }}
 <div id="intro">
+    {{ if .image }}
+    <div class="image"><img src="{{ .image | relURL }}" alt="" /></div>
+    {{ end }}
+ 
     <h1>
         {{- range $i, $e := .title -}}
             {{- if $i -}}<br/>{{- end -}} {{- .line -}}

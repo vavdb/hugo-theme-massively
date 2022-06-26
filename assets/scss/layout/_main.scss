@@ -45,8 +45,15 @@
 				}
 			}
 
-			&.featured {
-				text-align: center;
+			&.featured p {
+				padding-left: 0.5rem;
+				padding-right: 0.5rem;
+			}
+
+			&.featured .box
+			{
+				background-color: _palette(accent);
+				color: _palette(fg);
 			}
 
 			@include breakpoint('<=large') {

@@ -10,6 +10,8 @@
   other = "Naam"
 [CONTACT_FORM_SUBMIT_SEND_MESSAGE]
   other = "Versturen"
+[CONTACT_WHATSAPP]
+  other = "Whatsapp"
 [CONTACT_PHONE]
   other = "Telefoon"
 [CONTACT_SOCIAL]
@@ -17,7 +19,7 @@
 [COPYRIGHT_MESSAGE_1]
   other = "URfit"
 [COPYRIGHT_MESSAGE_2]
-  other = "in samenwerking met Vincability"
+  other = "Based on Massively from html5up.net"
 [INTRO_CONTINUE]
   other = "Verder"
 [NAV_MENU]

@@ -1,7 +1,7 @@
 <!-- Featured Post -->
 {{ $data := .siteData }}
 {{ range .firstpost }}
-<article class="post featured" id="{{ .Slug }}">
+<article class="post featured scroll-color" id="{{ .Slug }}" data-scroll-color="{{ .Params.backgroundColor }}">
     <header class="major">
         {{ if not .Date.IsZero }}
         <span class="date">{{ .Date.Format (.Site.Params.DateFormat | default "January 2, 2006") }}</span>
