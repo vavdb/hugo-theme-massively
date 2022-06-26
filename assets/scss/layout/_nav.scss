@@ -14,7 +14,7 @@
 			'transform 1s ease',
 			'opacity 1s ease'
 		));
-		background: #212931; //rgba(0, 0, 0, 0.6);
+		background: _palette(wrapper-bg); //rgba(0, 0, 0, 0.6);
 		height: 4rem;
 		line-height: 4rem;
 		margin: -4rem auto 0 auto;
@@ -28,7 +28,25 @@
 		position: -webkit-sticky;
 		position: sticky;
 		top: 0;
-	
+		transition: background-color 500ms ease;
+
+		&.color-alternate
+ 		{
+			background-color: _palette(wrapper-bg);
+			li a {
+				color: _palette(invert, fg);
+			}
+		}
+		
+		&.color-normal
+		{
+			background-color: _palette(wrapper-bg-alt);
+			li a 
+			{
+				color: _palette(fg);
+			}
+			
+		}
 
 		ul {
 			&.links {
@@ -67,7 +85,7 @@
 						background-color: _palette(invert, fg);
 
 						a {
-							color: _palette(invert, bg);
+							color: _palette(fg);
 
 							&:hover {
 								color: _palette(invert, accent) !important;

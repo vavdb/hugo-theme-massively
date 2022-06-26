@@ -25,12 +25,23 @@
 		background-repeat: repeat, no-repeat, no-repeat;
 		background-attachment: scroll, scroll, scroll;
 		z-index: -1;
+		transition: background-color 500ms ease;
 
 		&.fixed {
 			position: fixed;
 			width: 100vw;
 			height: 100vh;
 		}
+	
+	 	&.color-normal 
+		{
+			background-color: _palette(wrapper-bg);
+		}
+		
+		&.color-alternate 
+		{
+			background-color: _palette(wrapper-bg-alt);
+		}	
 	}
 
 	&.fade-in {
