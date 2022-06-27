@@ -52,6 +52,11 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+		
+		a.button
+		{
+			color: white !important;
+		}
 
 		&.hidden {
 			@include vendor('pointer-events', 'none');
@@ -87,7 +92,7 @@
 
 		@include breakpoint('<=medium') {
 			@include padding(_size(padding) * 1.5, _size(padding) * 2);
-			min-height: 90vh;
+			min-height: 70vh;
 
 			p {
 				br {
@@ -102,7 +107,7 @@
 
 		@include breakpoint('<=small') {
 			@include padding(_size(padding), _size(padding) * 1);
-			min-height: 80vh;
+			min-height: 60vh;
 
 			h1 {
 				font-size: 3.25rem;
