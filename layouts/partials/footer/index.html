@@ -18,21 +18,28 @@
             <label for="email">{{ i18n "CONTACT_FORM_FIELD_PHONE" . }}</label>
             <input type="text" name="phonenumber" id="phonenumber" />
           </div>          
-          
-          <label>Voor welke les: <select name="les[]" multiple>
-            <option value="Ma20">Maandag - 20:00</option>
-            <option value="Wo0845">Woensdag - 8:45</option>
-            <option value="Wo20">Woensdag - 20:00</option>
-            <option value="Za09">Zaterdag - 09:00</option>
-          </select></label>
-
+          <div class="field">
+            <label>Voor welke les</label> 
+            <!-- <select name="les[]" multiple>
+              <option value="Ma20">Maandag - 20:00</option>
+              <option value="Wo0845">Woensdag - 8:45</option>
+              <option value="Wo20">Woensdag - 20:00</option>
+              <option value="Za09">Zaterdag - 09:</option>
+            </select> -->
+            <ul>
+            <li><input type="checkbox" id="Ma20" name="Maandag - 20:00"><label for="Ma20">Maandag - 20:00</label></li>
+            <li><input type="checkbox" id="Wo845" name="Woensdag - 8:45"><label for="Wo845">Woensdag - 8:45</label></li>
+            <li><input type="checkbox" id="Wo20" name="Woensdag - 20:00"><label for="Wo20">Woensdag - 20:00</label></li>
+            <li><input type="checkbox" id="Za9" name="Zaterdag - 09:00"><label for="Za9">Zaterdag - 09:00</label></li>
+          </ul>
+          </div>  
           <div class="field">
             <label for="message">{{ i18n "CONTACT_FORM_FIELD_MESSAGE" . }}</label>
             <textarea name="message" id="message" rows="3"></textarea>
           </div>
         </div>
         <ul class="actions">
-          <li><input type="submit" value='{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" . }}' /></li>
+          <li><button type="submit" value='{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" . }}'>{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" . }}</button></li>
         </ul>
       </form>
     </section>
