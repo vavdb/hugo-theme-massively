@@ -46,6 +46,13 @@
 			}
 		}
 
+		img {
+			max-width: 80%;
+			margin-bottom: 2rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
 		&.hidden {
 			@include vendor('pointer-events', 'none');
 			@include vendor('transform', 'translateY(2rem)');

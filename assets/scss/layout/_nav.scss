@@ -58,8 +58,8 @@
 						color: _palette(fg);
 
 						&:hover {
-							color: inherit !important;
-							background-color: transparentize(_palette(invert, fg), 0.9);
+							color: _palette(fg) !important;
+							background-color: transparentize(_palette(invert, bg), 0.9);
 						}
 					}
 
@@ -70,7 +70,8 @@
 							color: _palette(fg);
 
 							&:hover {
-								color: _palette(invert, accent) !important;
+								color: _palette(fg) !important;
+								background-color: transparentize(_palette(invert, bg), 0.9);
 							}
 						}
 					}
@@ -81,6 +82,13 @@
 				@include vendor('flex-grow', '0');
 				@include vendor('flex-shrink', '0');
 				margin-bottom: 0;
+
+				li a				
+					{
+					&:hover {
+						color: _palette(bg) !important;
+					}
+				}
 			}
 		}
 
