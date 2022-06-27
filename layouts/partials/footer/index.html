@@ -4,7 +4,7 @@
 
     {{ with $data.contactinfo.contactformaction }}
     <section>
-      <form method="post" action="{{ . }}">
+      <form method="post" action="{{ . }}" name="contact" data-netlify="true">
         <div class="fields">
           <div class="field">
             <label for="name">{{ i18n "CONTACT_FORM_FIELD_NAME" . }}</label>
@@ -14,6 +14,18 @@
             <label for="email">{{ i18n "CONTACT_FORM_FIELD_EMAIL" . }}</label>
             <input type="text" name="email" id="email" />
           </div>
+          <div class="field">
+            <label for="email">{{ i18n "CONTACT_FORM_FIELD_PHONE" . }}</label>
+            <input type="text" name="phonenumber" id="phonenumber" />
+          </div>          
+          
+          <label>Voor welke les: <select name="les[]" multiple>
+            <option value="Ma20">Maandag - 20:00</option>
+            <option value="Wo0845">Woensdag - 8:45</option>
+            <option value="Wo20">Woensdag - 20:00</option>
+            <option value="Za09">Zaterdag - 09:00</option>
+          </select></label>
+
           <div class="field">
             <label for="message">{{ i18n "CONTACT_FORM_FIELD_MESSAGE" . }}</label>
             <textarea name="message" id="message" rows="3"></textarea>
