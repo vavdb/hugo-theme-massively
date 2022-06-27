@@ -1,9 +1,9 @@
 <!-- Footer -->
 {{ $data := index .Site.Data .Site.Language.Lang }}
 <footer id="footer">
-
     {{ with $data.contactinfo.contactformaction }}
     <section id="aanmelden">
+      <h2>{{ $data.contactinfo.formtitle }}</h2>
       <form method="post" action="{{ . }}" name="contact" data-netlify="true">
         <div class="fields">
           <div class="field">
@@ -45,23 +45,6 @@
     </section>
     {{ end }}
     <section class="split contact">
-        {{ with $data.contactinfo.address }}
-        <section class="alt">
-            <h3>{{ i18n "CONTACT_ADDRESS" . }}</h3>
-            <p>
-                {{ range $i, $e := . }}
-                    {{ if $i }} <br/> {{ end }} {{ .line }}
-                {{ end }}
-            </p>
-        </section>
-        {{ end }}
-        {{ with $data.contactinfo.phone }}
-        <section>
-            <h3>{{ i18n "CONTACT_PHONE" . }}</h3>
-            <p><a href="tel:{{ . }}">{{ . }}</a></p>
-        </section>
-        {{ end }}
-
         {{ with $data.contactinfo.whatsapp }}
         <section>
             <h3>{{ i18n "CONTACT_WHATSAPP" . }}</h3>
@@ -113,5 +96,24 @@
             </ul>
         </section>
         {{ end }}
+
+                
+        {{ with $data.contactinfo.address }}
+        <section class="alt">
+            <h3>{{ i18n "CONTACT_ADDRESS" . }}</h3>
+            <p>
+                {{ range $i, $e := . }}
+                    {{ if $i }} <br/> {{ end }} {{ .line }}
+                {{ end }}
+            </p>
+        </section>
+        {{ end }}
+        {{ with $data.contactinfo.phone }}
+        <section>
+            <h3>{{ i18n "CONTACT_PHONE" . }}</h3>
+            <p><a href="tel:{{ . }}">{{ . }}</a></p>
+        </section>
+        {{ end }}
+        
     </section>
 </footer>
