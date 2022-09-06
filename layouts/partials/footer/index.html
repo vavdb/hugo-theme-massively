@@ -114,6 +114,25 @@
             <p><a href="tel:{{ . }}">{{ . }}</a></p>
         </section>
         {{ end }}
-        
+        {{ with $data.contactinfo.kvk }}
+        <section>
+            <h3>KVK</h3>
+            <p>
+              {{ with $data.contactinfo.kvk }}
+              {{ . }}
+              {{ end }}
+            </p>
+        </section>
+        {{ end }}
+        {{ with $data.contactinfo.btw }}
+        <section>
+            <h3>BTW</h3>
+            <p>
+              {{ with $data.contactinfo.btw }}
+              {{ . }}
+              {{ end }}
+            </p>
+        </section>
+        {{ end }}                
     </section>
 </footer>
