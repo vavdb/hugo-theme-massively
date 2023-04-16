@@ -28,6 +28,25 @@
 		position: -webkit-sticky;
 		position: sticky;
 		top: 0;
+		transition: background-color 500ms ease;
+
+		&.color-alternate
+ 		{
+			background-color: _palette(wrapper-bg);
+			li a {
+				color: _palette(invert, fg);
+			}
+		}
+		
+		&.color-normal
+		{
+			background-color: _palette(wrapper-bg-alt);
+			li a 
+			{
+				color: _palette(fg);
+			}
+			
+		}
 
 		ul {
 			&.links {
@@ -54,7 +73,7 @@
 						display: block;
 						font-size: 0.8rem;
 						outline: none;
-						padding: 0 1.5rem;
+						padding: 0 1.0rem;
 						color: _palette(fg);
 
 						&:hover {

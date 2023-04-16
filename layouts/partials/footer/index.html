@@ -4,7 +4,12 @@
     {{ with $data.contactinfo.contactformaction }}
     <section id="aanmelden">
       <h2>{{ $data.contactinfo.formtitle }}</h2>
-      <form method="post" action="{{ . }}" name="contact" data-netlify="true">
+      <form method="post" action="{{ . }}" name="contact" data-netlify-recaptcha="true" netlify-honeypot="benjeechteenmens" data-netlify="true">
+        <p class="hidden" style="display: none;">
+          <label>
+            Don’t fill this out if you’re human: <input type="text" name="benjeechteenmens" />
+          </label>
+        </p>        
         <div class="fields">
           <div class="field">
             <label for="name">{{ i18n "CONTACT_FORM_FIELD_NAME" . }}</label>
@@ -16,7 +21,7 @@
           </div>
           <div class="field">
             <label for="email">{{ i18n "CONTACT_FORM_FIELD_PHONE" . }}</label>
-            <input type="text" name="phonenumber" id="phonenumber" />
+            <input type="text" required="required" name="phonenumber" id="phonenumber" />
           </div>          
           <div class="field">
             <label>Molenpark, Urmond</label> 
@@ -38,6 +43,7 @@
             <textarea name="message" id="message" rows="3"></textarea>
           </div>
         </div>
+        <div data-netlify-recaptcha="true"></div>
         <ul class="actions">
           <li><button type="submit" value='{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" . }}'>{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" . }}</button></li>
         </ul>
@@ -114,6 +120,25 @@
             <p><a href="tel:{{ . }}">{{ . }}</a></p>
         </section>
         {{ end }}
-        
+        {{ with $data.contactinfo.kvk }}
+        <section>
+            <h3>KVK</h3>
+            <p>
+              {{ with $data.contactinfo.kvk }}
+              {{ . }}
+              {{ end }}
+            </p>
+        </section>
+        {{ end }}
+        {{ with $data.contactinfo.btw }}
+        <section>
+            <h3>BTW</h3>
+            <p>
+              {{ with $data.contactinfo.btw }}
+              {{ . }}
+              {{ end }}
+            </p>
+        </section>
+        {{ end }}                
     </section>
 </footer>
