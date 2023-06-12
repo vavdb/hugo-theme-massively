@@ -10,7 +10,7 @@
             {{- end -}}
         {{- end -}}
         <li class="{{ if eq ($currentPage.RelPermalink) (`/bedrijven/`) }}active{{end}}"><a href='/bedrijven'>Voor Bedrijven</a></li>
-        <li class="{{ if eq ($currentPage.RelPermalink) (`/leefstijl/`) }}active{{end}}"><a href='/bedrijven'>Leefstijl</a></li>
+        <li class="{{ if eq ($currentPage.RelPermalink) (`/leefstijl/`) }}active{{end}}"><a href='/leefstijl'>Leefstijl</a></li>
         {{ with $data.contactinfo }}
         <li><a href='{{ "#footer" | relLangURL }}'>{{ i18n "NAV_CONTACT" . }}</a></li>
         {{ end }}
