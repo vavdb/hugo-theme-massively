@@ -24,20 +24,41 @@
             <input type="text" required="required" name="phonenumber" id="phonenumber" />
           </div>          
           <div class="field">
+            <label>Bootcamp</label> 
+          </div>  
+          <div class="field">
             <label>Molenpark, Urmond</label> 
-            <ul>
+            <ul style="list-style: none;">
             <li><input type="checkbox" id="Ma20" name="Maandag - 20:00"><label for="Ma20">Maandag - 20:00</label></li>
-            <li><input type="checkbox" id="Wo845" name="Woensdag - 8:45"><label for="Wo845">Woensdag - 8:45</label></li>
             <li><input type="checkbox" id="Wo20" name="Woensdag - 20:00"><label for="Wo20">Woensdag - 20:00</label></li>
             <li><input type="checkbox" id="Za9" name="Zaterdag - 09:00"><label for="Za9">Zaterdag - 09:00</label></li>
             </ul>
           </div>           
           <div class="field">
             <label>Nieuwdorp, Stein</label> 
-            <ul>
+            <ul style="list-style: none;">
             <li><input type="checkbox" id="Di17" name="Dinsdag - 17:00"><label for="Di17">Dinsdag - 17:00</label></li>
             </ul>
           </div>  
+          <div class="field">
+            <label>Running Bootcamp</label> 
+          </div>  
+          <div class="field">
+            <label>Heidekamppark, Urmond</label> 
+            <ul style="list-style: none;">
+              <li><input type="checkbox" id="Wo845" name="Woensdag - 8:45"><label for="Wo845">Woensdag - 8:45</label></li>
+            </ul>
+          </div>  
+          <div class="field">
+            <label>Overige</label> 
+          </div>  
+          <div class="field">
+            <ul style="list-style: none;">
+              <li><input type="checkbox" id="Leefstijl" name="Leefstijl"><label for="Leefstijl">Leefstijl</label></li>
+              <li><input type="checkbox" id="Bedrijven" name="URfit voor Bedrijven"><label for="Bedrijven">URfit voor Bedrijven</label></li>
+            </ul>
+          </div>            
+
           <div class="field">
             <label for="message">{{ i18n "CONTACT_FORM_FIELD_MESSAGE" . }}</label>
             <textarea name="message" id="message" rows="3"></textarea>

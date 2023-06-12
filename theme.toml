@@ -1,15 +1,15 @@
-name = "Massively"
+name = "URfit"
 license = "Creative Commons"
-licenselink = "https://github.com/curtiscde/hugo-theme-massively/blob/master/LICENSE"
+licenselink = "https://github.com/vavdb/hugo-theme-urfit/blob/master/LICENSE"
 description = "An elegant open-source and mobile-first theme"
-homepage = "https://html5up.net/uploads/demos/massively/index.html"
+homepage = "https://urfit.nu"
 tags = ["blog", "html5up"]
 features = ["blog"]
 min_version = "0.54.0"
 
 [author]
-    name = "Curtis Timson"
-    homepage = "https://curtiscode.dev/"
+    name = "Vincent van den Braken"
+    homepage = "https://vincent.vandenbraken.com/"
 
 # If porting an existing theme
 [original]
